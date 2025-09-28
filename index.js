@@ -205,29 +205,3 @@ function createSMSEntry(doc, sms) {
     createText(doc, `At: ${date}`);
     createMsgSeparator(doc);
 }
-
-// // import mms part parsing library if needed
-// function createMMSEntry(doc, mms) {
-//     const date = new Date(parseInt(mms['@_date'])).toLocaleString();
-//     const contact_name = mms['@_contact_name'] !== undefined ? mms['@_contact_name'] : mms['@_contact_name'] !== "(Unknown)" ? mms['@_contact_name'] : "Unknown Contact";
-//     const mmsParts = Array.isArray(mms.parts.part) ? mms.parts.part : [mms.parts.part];
-//     const subject = mms['@_sub'] !== undefined ? mms['@_sub'] : "Empty Subject";
-//     const address = formatPhoneNumber(mms['@_address']);
-//     const msg_box = mms['@_msg_box']; // 1 for received, 2 for sent
-//     const read_status = mms['@_read_status']; // 1 for read, 0 for unread
-//     const m_type = mms['@_m_type']; // The type of message as defined in the MMS spec
-
-
-//     // build the entry to the pdf
-//     createSubtitle(doc, `On subject: ${subject}`);
-//     if (msg_box === 1) {
-//         createSubtitle(doc, `${contact_name} with Phone number (${address}) sent you an MMS:`);
-//     } else if (msg_box === 2) {
-//         createSubtitle(doc, `You sent an MMS to ${contact_name} with Phone number (${address}):`);
-//     } else {
-//         createSubtitle(doc, `Other message type ${contact_name} with Phone number (${address}):`);
-//     }
-
-//     createText(doc, `At: ${date}`);
-//     createMsgSeparator(doc);
-// }
