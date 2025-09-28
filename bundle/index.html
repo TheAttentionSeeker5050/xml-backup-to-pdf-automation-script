@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SMS Backup to PDF</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>SMS Backup to PDF</h1>
+
+    <input type="file" id="xmlFile" accept=".xml" />
+    <input type="text" id="filterInput" placeholder="Filter by phone numbers or contact names (comma separated)" />
+
+    <button id="generateBtn">Generate PDF</button>
+    <p>Select an Android SMS backup XML file and optionally filter messages.</p>
+  </div>
+
+  <!-- jsPDF library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- Our app -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
